@@ -9,6 +9,7 @@ export function fetchWeather(city){
   const url = `${ROOT_URL}&q=${city},us`
   //basically, take this url that we made and make a get request on it
   const request = axios.get(url)
+  console.log('request ', request)
   //remember, action creators always have to return an action, and an action is an object which always has to have a type
   return {
     type: FETCH_WEATHER,

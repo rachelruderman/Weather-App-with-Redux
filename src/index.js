@@ -13,3 +13,6 @@ ReactDOM.render(
     <App />
   </Provider>
   , document.querySelector('.container'));
+
+
+//ReduxPromise is a middleware. Middleware have the ability to stop or manipulate actions before they hit any reducer whatsoever. If the payload received from the get request is a promise, ReduxPromise stops the action and waits for the promise to finish, and then dispatches the action with the payload of the resolved request (the data itself, instead of a promise)
