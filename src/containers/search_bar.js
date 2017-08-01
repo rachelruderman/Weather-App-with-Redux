@@ -13,9 +13,16 @@ export default class SearchBar extends Component {
     this.setState({term: event.target.value})
   }
 
+  onFormSubmit(event){
+    //this just tells the browser, don't send an http request to the server
+    event.preventDefault()
+    //we need to go and fetch weather data
+  }
+
   render(){
     return (
-      <form className='input-group'>
+      //submitting an html form element will automatically make a request to the server
+      <form onSubmit={this.onFormSubmit} className='input-group'>
         <input
           placeholder='Get a five-day forecast in your favorite cities'
           className='form-control'
