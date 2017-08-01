@@ -10,3 +10,9 @@ td, th {
 svg {
   height: 120px;
 }
+
+/*this says: find the first td in each row, and find the first td and its child div and give it a height of 200px and width of 250px*/
+td:first-of-type, td:first-of-type > div {
+  height: 200px;
+  width: 250px;
+}
