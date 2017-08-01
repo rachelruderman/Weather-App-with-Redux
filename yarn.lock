@@ -2467,6 +2467,10 @@ react-router@^2.0.1:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
+react-sparklines@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/react-sparklines/-/react-sparklines-1.4.2.tgz#ec1238c50d115b10ff694bfca480b23c9f35e58d"
+
 react@^0.14.3:
   version "0.14.9"
   resolved "https://registry.yarnpkg.com/react/-/react-0.14.9.tgz#9110a6497c49d44ba1c0edd317aec29c2e0d91d1"
