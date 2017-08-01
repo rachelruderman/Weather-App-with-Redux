@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {fetchWeather} from '../actions/index.js'
 
-
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor(props){
     super(props);
     this.state = {term: ''};
     //it's saying, take the existing function, bind it to this, and then replace it with that. Kind of overriding the existing function here. If you're ever passing a callback around and that function references this, you need to bind it
     this.onInputChange = this.onInputChange.bind(this)
+    this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
   onInputChange(event){
@@ -17,6 +20,8 @@ export default class SearchBar extends Component {
     //this just tells the browser, don't send an http request to the server
     event.preventDefault()
     //we need to go and fetch weather data
+    this.props.fetchWeather(this.state.term)
+    this.setState({term: ''})
   }
 
   render(){
@@ -37,3 +42,11 @@ export default class SearchBar extends Component {
     )
   }
 }
+
+
+//this makes sure that the dispatch flows down into the middleware and into the reducers
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({fetchWeather}, dispatch)
+}
+//the only reason we're passing null in here is because whenever we're passing in a function to map the dispatch to the props of our container, it goes as the second argument. By passing in null, it's saying, 'hey, I understand that redux is maintaining some state, but this container doesn't care about it at all. Thanks, but, we don't need any state here'
+export default connect(null, mapDispatchToProps)(SearchBar)
