@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
+    "heroku-prebuild": "npm install",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "prod": "NODE_ENV=production node server.js",
     "postinstall": "webpack -p"
@@ -13,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
   },
-  
+
   "dependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
