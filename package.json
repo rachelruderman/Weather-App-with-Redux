@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
   },
+  
   "dependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
